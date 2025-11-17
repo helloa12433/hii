@@ -1,0 +1,24 @@
+// Don’t copy or paste this into your Nimbus Node.js workspace — this file is only for input data used during API testing.
+POST http://localhost:3000/create-users
+
+no body needed
+
+
+POST http://localhost:3000/transfer
+
+{
+  "senderName": "Alice",
+  "receiverName": "Bob",
+  "amount": 300
+}
+
+
+
+POST http://localhost:3000/transfer
+
+{
+  "senderName": "Alice",
+  "receiverName": "Bob",
+  "amount": 3000
+}
+

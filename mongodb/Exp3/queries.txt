@@ -1,0 +1,45 @@
+// 1. Retrieve all products
+db.products.find({})
+
+// 2. Filter products by category
+db.products.find({ category: "Electronics" })
+
+// 3. Find products with specific variant color
+db.products.find({ "variants.color": "Blue" })
+
+// 4. Project only name and variants
+db.products.find(
+  {}, 
+  { name: 1, variants: 1, _id: 0 }
+)
+
+// 5. Find products with variants matching multiple conditions
+db.products.find({
+  "variants": {
+    $elemMatch: {
+      color: "Black",
+      stock: { $gte: 5 }
+    }
+  }
+})
+
+// 6. Update variant stock using positional operator
+db.products.updateOne(
+  { 
+    _id: "686f68ed2bf5384209b236a2",
+    "variants._id": "686f68ed2bf5384209b236b3"
+  },
+  { 
+    $set: { "variants.$.stock": 15 } 
+  }
+)
+
+// 7. Aggregate to count products by category
+db.products.aggregate([
+  {
+    $group: {
+      _id: "$category",
+      count: { $sum: 1 }
+    }
+  }
+])

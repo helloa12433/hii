@@ -1,0 +1,136 @@
+:root{
+  --bg: #0f1720;       /* dark page background */
+  --panel: #ffffff;    /* card background */
+  --muted: #e6edf3;    /* subtle border */
+  --accent: #22c55e;   /* green */
+  --danger: #ef4444;   /* red */
+  --text: #0b1020;
+  --soft-shadow: 0 8px 20px rgba(2,6,23,0.45);
+  --card-radius: 12px;
+  --gap: 16px;
+  --max-width: 420px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after { box-sizing: inherit; }
+
+html,body{
+  height:100%;
+  margin:0;
+  background: linear-gradient(180deg, #0b1220 0%, #0f1726 100%);
+  color: #e6eef6;
+}
+
+.page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 20px;
+}
+
+/* Card wrapper centers and optionally shows the mock frame like sample */
+.card-wrap{
+  width:100%;
+  max-width: calc(var(--max-width) + 80px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+}
+
+/* White panel card */
+.card{
+  width:100%;
+  max-width: var(--max-width);
+  background: var(--panel);
+  color: var(--text);
+  border-radius: var(--card-radius);
+  padding: 28px 28px;
+  box-shadow: var(--soft-shadow);
+  border: 1px solid rgba(2,6,23,0.06);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* Balance display */
+.balance{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:18px;
+  gap:6px;
+}
+
+.currency{
+  font-size:14px;
+  color: #16a34a;
+  font-weight:600;
+}
+
+.amount{
+  font-size:36px;
+  font-weight:700;
+  color:#0f1720;
+  letter-spacing:0.4px;
+}
+
+/* Controls - buttons stacked */
+.controls{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+/* Buttons common */
+.btn{
+  width:100%;
+  padding:12px 16px;
+  border-radius:8px;
+  border: none;
+  font-weight:600;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow: 0 4px 10px rgba(2,6,23,0.08);
+  transition: transform .08s ease, box-shadow .12s ease, opacity .12s;
+}
+
+/* Green deposit */
+.btn-deposit{
+  background: linear-gradient(180deg, #34d399 0%, #22c55e 100%);
+  color:white;
+}
+
+/* Red withdraw */
+.btn-withdraw{
+  background: linear-gradient(180deg, #fb7185 0%, #ef4444 100%);
+  color:white;
+}
+
+/* Press effects */
+.btn:active{ transform: translateY(1px); box-shadow: 0 2px 6px rgba(2,6,23,0.15); }
+.btn:focus{ outline: none; box-shadow: 0 0 0 4px rgba(34,197,94,0.08); }
+
+/* Small caption under card in sample */
+.hint{
+  margin-top:10px;
+  color: rgba(230,237,246,0.6);
+  font-size:13px;
+  text-align:center;
+}
+
+/* Responsive scaling for small screens */
+@media (max-width:420px){
+  .card{ padding:20px; border-radius:10px; }
+  .amount{ font-size:30px; }
+  .btn{ padding:10px 14px; font-size:15px; border-radius:7px; }
+}

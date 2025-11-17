@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Dashboard — Practice</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- theme toggle input (checkbox-hack) -->
+  <input id="theme-toggle" type="checkbox" aria-label="Toggle dark mode" />
+
+  <div class="app">
+    <header class="header">
+      <div class="brand">Admin Dashboard</div>
+      <div class="header-right">
+        <label for="theme-toggle" class="theme-switch">
+          <input type="checkbox" aria-hidden="true" />
+          <span class="switch-knob" aria-hidden="true"></span>
+          <span class="switch-label">Dark Mode</span>
+        </label>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav class="sidebar">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Users</a></li>
+          <li><a href="#">Reports</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </nav>
+
+      <main class="main">
+        <section class="hero">
+          <h1>Welcome, Admin!</h1>
+          <p class="lead">This is the main content area. Add charts, tables, or reports here.</p>
+        </section>
+
+        <section class="cards">
+          <article class="card small">
+            <h3>Quick Stats</h3>
+            <div class="stat-grid">
+              <div class="stat">
+                <div class="num">124</div>
+                <div class="label">Users</div>
+              </div>
+              <div class="stat">
+                <div class="num">8</div>
+                <div class="label">New</div>
+              </div>
+              <div class="stat">
+                <div class="num">3</div>
+                <div class="label">Alerts</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card wide">
+            <h3>Activity Feed</h3>
+            <div class="placeholder">(charts / tables go here)</div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      © 2025 Admin Panel
+    </footer>
+  </div>
+</body>
+</html>
